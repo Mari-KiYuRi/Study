@@ -1,2 +1,92 @@
 #include <iostream>
-jshdjs;rg
+#include <cmath>
+using namespace std;
+
+void CreateMat(int matrix[12][12]) {
+    for (int i = 0; i < 12; i++) {
+        for (int j = 0; j < 12; j++) {
+            matrix[i][j] = rand() % 24 - 12;
+            cout << matrix[i][j] << " ";
+        }
+        cout << "\n";
+    }
+    cout << "\n\n";
+}
+
+void FindSum(int matrix[12][12]) {
+    int result[12]{};
+    for (int i = 0; i < 12 ; i++) {
+        for (int j = 0; j < 12; j++) {
+            if ( matrix[i][j] < 0) {
+                for (int k = j + 1; k < 12; k++) {
+                    result[i] += abs(matrix[i][k]);
+                }
+                break;
+            }
+
+        }
+    }
+    cout << "b: ";
+    for (int i = 0; i < 12; i++) {
+        cout << result[i] << " "; 
+    }
+    cout << "\n";
+    
+}
+
+void FindNegativeElement(int matrix[12][12]) {
+    int result[12]{};
+    for (int i = 0; i < 12; i++) {
+        for (int j = 4; j < 12; j++) {
+            if (matrix[i][j] < 0) {
+                result[i] = matrix[i][j];
+                break;
+            }
+
+        }
+    }
+    cout << "c: ";
+    for (int i = 0; i < 12; i++) {
+        cout << result[i] << " ";
+    }
+    cout << "\n";
+}
+
+void MaximumNumber(int m[12][12], int maxNum[12]){
+    int k = -9999;
+    cout << "a: ";
+    for (int i{}; i < 12; i++){
+        for (int j{}; j < 12; j++){
+            if (m[i][j] > k){
+                k = m[i][j];
+            }
+        }
+        maxNum[i] = k;
+        k = -9999;
+        cout << maxNum[i] << " ";
+    }
+    cout << "\n";
+}
+
+void PrintMinMaxNum(int maxNum[12]){
+    int minMax = 1000;
+    int numStr = 0;
+    for (int i{}; i < 12; i++){
+        if (maxNum[i] < minMax){
+            minMax = maxNum[i];
+            numStr = i;
+        }
+    }
+    cout << "Номер строки, содержащей наименьший максимальный элемент строки: " << numStr+1 << "\n";
+    cout << "Наименьший максимальный элемент строки: " << minMax << "\n";
+}
+
+int main() {
+    int matrix[12][12]{};
+    int maxNum[12];
+    CreateMat(matrix);
+    MaximumNumber(matrix, maxNum);
+    PrintMinMaxNum(maxNum);
+    FindSum(matrix);
+    FindNegativeElement(matrix);   
+}
