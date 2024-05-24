@@ -12,6 +12,16 @@ void PrintMatrix(int** matrix) {
     }
 }
 
+void FindNumbeNegativeElements(int** matrix) {
+    int countNegativeElements{};
+    for (int i = 0; i < rows; i++) {
+        if (matrix[i][i] < 0) {
+            countNegativeElements++;
+        }
+    }
+    std::cout << "Количество отрицательных элементов на главной диагонали: " << countNegativeElements << "\n";
+}
+
 void FillingMatrix(int** matrix) {
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < columns; j++) {
@@ -34,4 +44,5 @@ int main()
 
     PrintMatrix(Matrix);
 
+    FindNumbeNegativeElements(Matrix);
 }
