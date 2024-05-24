@@ -33,7 +33,9 @@ void FillingMatrix(int** matrix) {
 void ReplacingElements(int** matrix) {
     for (int i = 0; i < rows; i++) {
         for (int j = i + 1; j < columns; j++) {
-            
+            if (matrix[i][j] > 0) {
+                matrix[i][j] = 0;
+            }
         }
     }
 }
@@ -54,5 +56,5 @@ int main()
 
     FindNumbeNegativeElements(Matrix);
 
-     ReplacingElements(Matrix);
+    ReplacingElements(Matrix);
 }
