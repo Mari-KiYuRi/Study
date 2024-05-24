@@ -30,6 +30,14 @@ void FillingMatrix(int** matrix) {
     }
 }
 
+void ReplacingElements(int** matrix) {
+    for (int i = 0; i < rows; i++) {
+        for (int j = i + 1; j < columns; j++) {
+            
+        }
+    }
+}
+
 
 int main()
 {
@@ -45,4 +53,6 @@ int main()
     PrintMatrix(Matrix);
 
     FindNumbeNegativeElements(Matrix);
+
+     ReplacingElements(Matrix);
 }
