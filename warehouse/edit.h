@@ -8,6 +8,7 @@
 #include "product.h"
 #include <QObject>
 #include <QErrorMessage>
+#include <QtWidgets>
 
 namespace Ui {
 class Edit;
