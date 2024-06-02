@@ -13,7 +13,7 @@ Search::Search(QWidget *parent)
     ui->comboBox->addItem("Поиск по производителю");
     ui->comboBox->addItem("Поиск по номеру секции");
 }
-
+ 
 void Search::setArray(QList<product>* f_products)
 {
     us_products = f_products;
