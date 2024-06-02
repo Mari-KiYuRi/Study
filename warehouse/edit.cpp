@@ -1,6 +1,6 @@
 #include "edit.h"
 #include "ui_edit.h"
-
+ 
 Edit::Edit(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::Edit)
@@ -8,15 +8,15 @@ Edit::Edit(QWidget *parent)
     ui->setupUi(this);
     ui->BoxEdit->currentIndex();
 }
-
+ 
 void Edit::setArray(QList<product> *f_prodocts){
     us_products = f_prodocts;
 }
-
+ 
 Edit::~Edit() {
     delete ui;
 }
-
+ 
 void Edit::on_Ready_clicked() {
     bool chek1{true};
     bool chek2{true};
