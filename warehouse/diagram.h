@@ -5,7 +5,7 @@
 #include <QPainter>
 #include "product.h"
 namespace Ui {
-class Diagram;
+class Diagram; 
 }
 
 class Diagram : public QWidget

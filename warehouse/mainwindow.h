@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include <QObject>
-#include <QList>
+#include <QList> 
 #include "table.h"
 #include "product.h"
 
